@@ -442,4 +442,19 @@ p {
   .row .col-1-of-3 {
     width: calc((100% - 2 * 6rem) / 3);
   }
-  
+  @media only screen and (max-width: 600px) {
+    /* body {
+      background-color: lightblue;
+    } */
+
+    .row {
+        max-width: 114rem;
+        margin: 0px 12px;
+    }
+    html {
+        font-size: 28.5%;
+    }
+    .card__details {
+        padding: 0;
+    }
+  }
