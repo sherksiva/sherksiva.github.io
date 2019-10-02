@@ -1,2 +1,2 @@
 # sherksiva.github.io
-![Image of profile Template](https://octodex.github.com/images/yaktocat.png)
+![Image of profile Template](https://https://github.com/sherksiva/sherksiva.github.io/blob/master/screen.png)
