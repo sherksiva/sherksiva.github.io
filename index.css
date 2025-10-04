@@ -60,7 +60,10 @@ p {
   text-align:center;
   background-color: white;
 }
-
+.content_file {
+  height: 14vh;
+  font-size: medium;
+}
 /* Animation */
 
 .parallax > use {
