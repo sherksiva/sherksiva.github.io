@@ -107,7 +107,16 @@ p {
   }
 }
 
-
+@media (max-width: 768px) {
+  .awards {
+    font-size: 15px;
+    color: #ff0fa9;
+    height: 21vh;
+    width: 89%;
+    margin: 0 auto;
+  }
+  
+}
 
 /*Card css*/
 
