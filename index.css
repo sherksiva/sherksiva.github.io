@@ -118,6 +118,8 @@ p {
   
 }
 
+
+
 /*Card css*/
 
 .u-center-text {
@@ -306,7 +308,17 @@ p {
   .card__side--front-3 {
     background: linear-gradient(-45deg, #24ff72, #9a4eff);
   }
-  
+
+  .color_white {
+    color: #ffffff;
+  }
+  .margin_top {
+    margin-top: 25%;
+  }
+  .font_bold {
+    font-weight: 1000;
+  }
+
   .card__side--back {
     -webkit-transform: rotateY(180deg);
             transform: rotateY(180deg);
@@ -352,6 +364,10 @@ p {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+
+  .text_center {
+    text-align: center;
   }
   
   .card__title--1 .fas {
