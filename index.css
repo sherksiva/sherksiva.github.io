@@ -61,7 +61,7 @@ p {
   background-color: white;
 }
 .content_file {
-  height: 14vh;
+  height: 5vh;
   font-size: medium;
 }
 /* Animation */
@@ -101,7 +101,7 @@ p {
   }
   .content {
     height: 10vh;
-    margin-bottom: 10%;
+    /* margin-bottom: 10%; */
   }
   h1 {
     font-size:24px;
