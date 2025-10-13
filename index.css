@@ -476,6 +476,10 @@ p {
       background-color: lightblue;
     } */
 
+    .center_bar {
+      display: none;
+    }
+
     .row {
         max-width: 114rem;
         margin: 0px 12px;
