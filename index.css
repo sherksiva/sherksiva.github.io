@@ -50,9 +50,10 @@ p {
   position:relative;
   width: 100%;
   height:15vh;
-  margin-bottom:-7px; /*Fix for safari gap*/
+  margin-bottom: -14px; /*Fix for safari gap*/
   min-height:100px;
   max-height:150px;
+  
 }
 
 .content {
@@ -426,6 +427,9 @@ p {
             transform: translate(-50%, -50%);
     width: 90%;
     text-align: center;
+  }
+  .moving_text {
+    margin-top: 28px;
   }
   
   .card__price-box {
