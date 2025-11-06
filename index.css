@@ -312,13 +312,14 @@ p {
   }
 
   .color_white {
-        background: #ffffff;
-    	color: #000000;
-    	padding: 4px;
+    background: #ffffff;
+    color: #000000;
+    padding: 4px;
+    border-radius: 0.8em;
   }
   .color_white:hover {
-     color: #ffffff;
-     background: #000000;
+    color: #ffffff;
+    background: #3dc3d3cc;
   }
 
   .margin_top {
@@ -502,3 +503,4 @@ p {
         padding: 0;
     }
   }
+
