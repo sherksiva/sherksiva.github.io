@@ -312,8 +312,15 @@ p {
   }
 
   .color_white {
-    color: #ffffff;
+        background: #ffffff;
+    	color: #000000;
+    	padding: 4px;
   }
+  .color_white:hover {
+     color: #ffffff;
+     background: #000000;
+  }
+
   .margin_top {
     margin-top: 25%;
   }
