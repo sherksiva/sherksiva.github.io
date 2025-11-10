@@ -65,6 +65,9 @@ p {
   height: 5vh;
   font-size: medium;
 }
+.hide_cards {
+   visibility: hidden;
+}
 /* Animation */
 
 .parallax > use {
@@ -312,15 +315,25 @@ p {
   }
 
   .color_white {
-    color: #ffffff;
+        background: #ffffff;
+    	color: #000000;
+    	padding: 4px;
+        border-radius: 6px;
   }
+  .color_white:hover {
+     color: #ffffff;
+     background: #3050c4;
+  }
+
   .margin_top {
     margin-top: 25%;
   }
   .font_bold {
     font-weight: 1000;
   }
-
+  .otherclass {
+    
+  }
   .card__side--back {
     -webkit-transform: rotateY(180deg);
             transform: rotateY(180deg);
@@ -471,9 +484,25 @@ p {
   .row [class^="col-"]:not(:last-child) {
     margin-right: 6rem;
   }
-  
+  .animation-three-cards {
+	-webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
   .row .col-1-of-3 {
     width: calc((100% - 2 * 6rem) / 3);
+  }
+  #target {
+    background:#0099cc;
+    width:100vh;
+    height:100vh;
+    position:absolute;
+    top:0;
+    padding:0px;
+    display:none;
+  }
+
+  .Hide {
+    display:none;
   }
   @media only screen and (max-width: 600px) {
     /* body {
