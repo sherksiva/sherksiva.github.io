@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://kit.fontawesome.com/bdd89edb33.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
       rel="stylesheet"
@@ -18,13 +19,39 @@
 <body>
     <!--Hey! This is the original version
 of Simple CSS Waves-->
-
+    <script>
+        function initalScript() {
+	   document.getElementsByClassName('show_cards')[0].style.display='none';
+        }
+	function showExperiences () {
+		var card1 = document.getElementById("card_back--1");
+		card1.className += " animation-three-cards";
+                var card2 = document.getElementById("card_back--2");
+		card2.className += " animation-three-cards";
+                var card3 = document.getElementById("card_back--3");
+		card3.className += " animation-three-cards";
+	document.getElementsByClassName('show_cards')[0].style.display='block';
+	document.getElementsByClassName('show_experiences')[0].style.display='none';
+		
+        }
+        function showCards () {
+                const card1 = document.getElementById('card_back--1');
+                card1.classList.remove("animation-three-cards");
+		var card2 = document.getElementById("card_back--2");
+		card2.classList.remove("animation-three-cards");
+                var card3 = document.getElementById("card_back--3");
+		card3.classList.remove("animation-three-cards");
+		document.getElementsByClassName('show_experiences')[0].style.display='block';
+	        document.getElementsByClassName('show_cards')[0].style.display='none';
+        }
+	initalScript();
+    </script>
     <div class="header">
 
        <div style="height:20px">
-       </div>
+       <div id="landing_page">
         <!--Cards-->
-            <div class="row">
+            <div class="row" id="card_div">
                 <div class="col-1-of-3">
                   <div class="card">
                       <div class="card__side card__side--front-1">
@@ -45,7 +72,7 @@ of Simple CSS Waves-->
                           </ul>
                       </div>
                       </div>
-                      <div class="card__side card__side--back card__side--back-1">
+                      <div class="card__side card__side--back card__side--back-1" id="card_back--1">
                         <div class="card__details margin_top">
                           <ul>
                           <li>During my time at <b class="font_bold">Greatinnovus</b>, I contributed to the <b class="font_bold">Inventory Management</b> product for OneviewCommerce</li>
@@ -71,7 +98,7 @@ of Simple CSS Waves-->
                               </ul>
                             </div>
                           </div>
-                          <div class="card__side card__side--back card__side--back-2">
+                          <div class="card__side card__side--back card__side--back-2" id="card_back--2">
                             <div class="card__details margin_top">
                               <ul>
                               <li>During my time at <b class="font_bold">SMI</b>, I contributed to the <b class="font_bold">Health Care</b> product for <b class="font_bold">GHx</b></li>
@@ -99,7 +126,7 @@ of Simple CSS Waves-->
                               </ul>
                             </div>
                           </div>
-                          <div class="card__side card__side--back card__side--back-3">
+                          <div class="card__side card__side--back card__side--back-3" id="card_back--3">
                             <div class="card__details margin_top">
                               <ul>
                               <li>During my time at <b class="font_bold">Photon</b>, I contributed to the <b class="font_bold">SDSA</b> product for <b class="font_bold">Samsung</b></li>
@@ -116,6 +143,7 @@ of Simple CSS Waves-->
                       </div>
                     </div>
             </div>
+        </div>
         
         <!--Waves Container-->
         <div style="background: #395cb6;">
@@ -147,6 +175,9 @@ of Simple CSS Waves-->
       <a href="./Sivaprakash_MERN_MEAN_8+Years_Experience.pdf" download>
         Download Resume
       </a>
+      <a style="text-decoration: underline;margin-left: 10px;color: -webkit-link;cursor: pointer;" class="toggle show_experiences" onclick="showExperiences()">Show Experiences</a>
+
+      <a style="text-decoration: underline;margin-left: 10px;color: -webkit-link;cursor: pointer;" class="toggle show_cards" style="display:none;" onclick="showCards()">Show Cards</a>
       
     </div>
 
@@ -163,5 +194,3 @@ of Simple CSS Waves-->
 </body>
 
 </html>
-
-
