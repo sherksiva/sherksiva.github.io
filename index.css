@@ -329,6 +329,7 @@ p {
     margin-top: 25%;
   }
   .font_bold {
+	text-shadow: -1px -1px 0 #1211119e, 1px -1px 0 #16151563, -1px 1px 0 #18171799, 1px 1px 0 #151414;
     font-weight: 1000;
   }
   .otherclass {
