@@ -3,7 +3,9 @@
 body {
   margin:0;
 }
-
+#card_div {
+	padding-top: 14px;
+}
 h1 {
   font-family: 'Lato', sans-serif;
   font-weight:300;
@@ -116,7 +118,7 @@ p {
   .awards {
     font-size: 15px;
     color: #ff0fa9;
-    height: 21vh;
+    height: 11vh;
     width: 89%;
     margin: 0 auto;
   }
@@ -443,6 +445,7 @@ p {
     text-align: center;
   }
   .moving_text {
+	display: none;
     margin-top: 10px;
   }
   
@@ -465,6 +468,8 @@ p {
   .row {
     max-width: 114rem;
     margin: 0 auto;
+	padding-top: 15px;
+	margin: 0 15px;
   }
   
   .row:not(:last-child) {
@@ -509,14 +514,19 @@ p {
     /* body {
       background-color: lightblue;
     } */
-
+	.card__heading {
+		line-height: 1.0;
+	}
     .center_bar {
       display: none;
     }
-
+	.moving_text {
+      display: block;
+    }
     .row {
         max-width: 114rem;
         margin: 0px 12px;
+		padding-top: 15px;
     }
     html {
         font-size: 28.5%;
