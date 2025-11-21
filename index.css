@@ -515,6 +515,10 @@ p {
     /* body {
       background-color: lightblue;
     } */
+	#card_div {
+		padding-top: 14px;
+		margin: 0 10px;
+	}
 	.card__heading {
 		line-height: 1.0;
 	}
