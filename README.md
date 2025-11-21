@@ -20,4 +20,5 @@
  6.  https://github.com/sherksiva/node-practice - It having main JS like express.js Initial setup - With CURD Operation, initial Node express.js setup.
  7.  https://github.com/sherksiva/AllDBReadme - PostgreSQL , MongoDB , SQL Connection Code and sample CRUD operation for given DBs.
  8.  https://github.com/sherksiva/nodejs_mysql_swagger_api - NodeJs, MySQL with Swagger.
- 9.  https://sivaprakashdashboradangularv01.vercel.app/#/dashboard - Sivaprakash DashBoard Angular.
+ 9.  https://github.com/sherksiva/nodejs-auto-swagger-with-CURD - NodeJS, MongoDB with Swagger. Perfectly run in local.
+ 10. https://sivaprakashdashboradangularv01.vercel.app/#/dashboard - Sivaprakash DashBoard Angular.
