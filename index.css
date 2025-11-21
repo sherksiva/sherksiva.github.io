@@ -5,6 +5,7 @@ body {
 }
 #card_div {
 	padding-top: 14px;
+	margin: 0 auto;
 }
 h1 {
   font-family: 'Lato', sans-serif;
