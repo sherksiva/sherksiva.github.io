@@ -2,6 +2,9 @@
 **Sample screen of my profile**
 ![Profile_of_Mine](https://github.com/sherksiva/sherksiva.github.io/blob/master/screen.png)
 
+**Projects demo page**
+![Projects_demo_screen](https://github.com/sherksiva/sherksiva.github.io/blob/master/projects_demo.png)
+
 #### MY RECENT WORKS
 ##### HTML, CSS, JAVASCRIPT, JQUERY PROJECTS
  1. https://sherksiva.github.io - My Detailed Resume Webpage
