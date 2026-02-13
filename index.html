@@ -40,21 +40,6 @@
         document.getElementsByClassName('show_experiences')[0].style.display='block';
         document.getElementsByClassName('show_cards')[0].style.display='none';
       }
-
-      //Website visit Counter
-
-      var counterContainer = document.querySelector(".website-counter");
-      //var resetButton = document.querySelector("#reset");
-      var visitCount = localStorage.getItem("page_view");
-      // Check if page_view entry is present
-      if (visitCount) {
-        visitCount = Number(visitCount) + 1;
-        localStorage.setItem("page_view", visitCount);
-      } else {
-        visitCount = 1;
-        localStorage.setItem("page_view", 1);
-      }
-      counterContainer.innerHTML = 'Visitors :' + visitCount;
     </script>
     <div class="header">
 
@@ -191,7 +176,6 @@
 
       <a style="text-decoration: underline;margin-left: 10px;color: -webkit-link;cursor: pointer;" class="toggle show_cards" style="display:none;" onclick="showCards()">Show Cards</a>
       <a style="text-decoration: underline;margin-left: 10px;color: -webkit-link;cursor: pointer;" href="https://projects-demo-site.vercel.app/">Demo Projects</a>
-      <div class="website-counter" style="margin-left: 10px;color: -webkit-link;">0</div>
     </div>
 
     <div class="content_file content awards" style="font-size:15px;color: #ff0fa9;">
