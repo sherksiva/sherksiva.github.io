@@ -1,197 +1,598 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sivaprakash Raman</title>
-    
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="https://kit.fontawesome.com/bdd89edb33.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="index.css">
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #0d0d0d;
+            color: #e8e8e8;
+            line-height: 1.5;
+        }
+
+        .nav-bar {
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .brand {
+            font-family: 'Syne', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: #888;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover {
+            color: #fff;
+        }
+
+        .hero-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 40px 40px;
+        }
+
+        .hero-section h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 18px;
+            letter-spacing: -2px;
+        }
+
+        .hero-section p {
+            font-size: 19px;
+            color: #999;
+            margin-bottom: 35px;
+            max-width: 900px;
+        }
+
+        .filter-controls {
+            margin-bottom: 40px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .filter-btn {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active {
+            background: #4a9eff;
+            border-color: #4a9eff;
+        }
+
+        .primary-btn {
+            display: inline-block;
+            padding: 13px 32px;
+            background: #fff;
+            color: #0d0d0d;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .packages-section {
+            padding: 20px 40px 100px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        .packages-wrap {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            align-items: start;
+        }
+
+        .pkg {
+            background: #141414;
+            border: 1px solid #222;
+            padding: 32px 28px;
+            border-radius: 12px;
+            height: 330px;
+            transition: all 0.3s ease;
+        }
+        .demo-pkg {
+            height: 180px;
+        }
+
+        .pkg:hover {
+            border-color: #4a9eff;
+            transform: translateY(-4px);
+        }
+
+        .pkg.hidden {
+            display: none;
+        }
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1a1a1a;
+            border-radius: 8px;
+            color: #4a9eff;
+        }
+
+        .pkg h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .price {
+            font-family: 'Syne', sans-serif;
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #4a9eff;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 28px;
+        }
+
+        .feature-list li {
+            padding: 7px 0;
+            color: #aaa;
+            font-size: 14px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .feature-list li b {
+            color: #fff;
+        }
+
+        .feature-list li:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #4a9eff;
+        }
+
+        .select-btn {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'DM Sans', sans-serif;
+        }
+        /* .select-btn a {
+            color: #fff;
+            text-decoration: none;
+        } */
+
+        /* .select-btn a:hover {
+            background: #fff;
+            color: #0d0d0d;
+            border-color: #fff;
+        } */
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        .select-btn:hover {
+            background: #fff;
+            color: #0d0d0d;
+            border-color: #fff;
+        }
+        /* Newly added css for demo pages */
+        .demo-pages-frame {
+            grid-template-columns: repeat(5, 1fr);
+        }
+        h5 {
+            color: #fff;
+        }
+        @media (max-width: 1024px) {
+            .packages-wrap {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            /* .pkg {
+                height: auto;
+            } */
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 44px;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .packages-wrap {
+                grid-template-columns: 1fr;
+            }
+            .pkg {
+                height: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <script>
-      document.getElementsByClassName('show_cards')[0].style.display='none';
-      function showExperiences () {
-        var card1 = document.getElementById("card_back--1");
-        card1.className += " animation-three-cards";
-        var card2 = document.getElementById("card_back--2");
-        card2.className += " animation-three-cards";
-        var card3 = document.getElementById("card_back--3");
-        card3.className += " animation-three-cards";
-        document.getElementsByClassName('show_cards')[0].style.display='block';
-        document.getElementsByClassName('show_experiences')[0].style.display='none';
-        
-      }
-      function showCards () {
-        const card1 = document.getElementById('card_back--1');
-        card1.classList.remove("animation-three-cards");
-        var card2 = document.getElementById("card_back--2");
-        card2.classList.remove("animation-three-cards");
-        var card3 = document.getElementById("card_back--3");
-        card3.classList.remove("animation-three-cards");
-        document.getElementsByClassName('show_experiences')[0].style.display='block';
-        document.getElementsByClassName('show_cards')[0].style.display='none';
-      }
-    </script>
-    <div class="header">
 
-       <div style="height:20px">
-       <div id="landing_page">
-        <!--Cards-->
-            <div class="row" id="card_div">
-                <div class="col-1-of-3">
-                  <div class="card">
-                      <div class="card__side card__side--front-1">
-                      <div class="card__title card__title--1">
-                          <i class="fas fa-paper-plane"></i>
-                          <h4 class="card__heading">FRONT END</h4>
-                      </div>
-          
-                      <div class="card__details">
-                          <ul>
-                          <li>HTML</li>
-                          <li>CSS / Scss </li>
-                          <li>JAVASCRIPT</li>
-                          <li>jQuery</li>
-                          <li>REACT / Redux</li>
-                          <li>ANGULAR</li>
-                          
-                          </ul>
-                      </div>
-                      </div>
-                      <div class="card__side card__side--back card__side--back-1" id="card_back--1">
-                        <div class="card__details margin_top">
-                          <ul>
-                          <li>During my time at <b class="font_bold">Greatinnovus</b>, I contributed to the <b class="font_bold">Inventory Management</b> product for OneviewCommerce</li>
+    <nav class="nav-bar">
+        <div class="brand">Sivaprakash Raman</div>
+        <ul class="nav-menu">
+            <li><a href="https://codesandbox.io/u/sivaprakash441" target="_blank" rel="noopener noreferrer">CODE SAND BOX</a></li>
+            <li><a href="https://codepen.io/sherksiva" target="_blank" rel="noopener noreferrer">CODE PEN</a></li>
+            <li><a href="#work">WORK HISTORY</a></li>
+            <li><a href="#demos">DEMOS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
 
-                          <li ><a class="color_white" href="https://www.oneviewcommerce.com/" target="_blank">Oneview Commerce (USA) <i class="fas fa-globe"></i></a></li>
-                          
-                          </ul>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-                <div class="col-1-of-3">
-                        <div class="card">
-                          <div class="card__side card__side--front-2">
-                            <div class="card__title card__title--2">
-                              <i class="fas fa-plane"></i>
-                              <h4 class="card__heading">BACK END</h4>
-                            </div>
-              
-                            <div class="card__details">
-                              <ul>
-                                <li>NODE JS</li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="card__side card__side--back card__side--back-2" id="card_back--2">
-                            <div class="card__details margin_top">
-                              <ul>
-                              <li>During my time at <b class="font_bold">SMI</b>, I contributed to the <b class="font_bold">Health Care</b> product for <b class="font_bold">GHx</b></li>
-    
-                              <li ><a class="color_white" href="https://www.ghx.com/" target="_blank">GHx (USA) <i class="fas fa-globe"></i></a></li>
-							
-                              <li>During my time at <b class="font_bold">Photon</b>, I contributed to the <b class="font_bold">SDSA</b> product for <b class="font_bold">Samsung</b></li>
-    
-                              <li ><a class="color_white" href="https://www.samsung.com/us/" target="_blank">Samsung (USA) <i class="fas fa-globe"></i></a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                <div class="col-1-of-3">
-                        <div class="card">
-                          <div class="card__side card__side--front-3">
-                            <div class="card__title card__title--3">
-                              <i class="fas fa-rocket"></i>
-                              <h4 class="card__heading">DATA BASE</h4>
-                            </div>
-              
-                            <div class="card__details">
-                              <ul>
-                                <li>MONGO DB</li>
-                                <li>MY SQL</li>
-                                <li>PostgreSQL</li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="card__side card__side--back card__side--back-3" id="card_back--3">
-                            <div class="card__details margin_top">
-                              <ul>
-							  <li>During my time at <b class="font_bold">Aspire Systems</b>, I contributed to the <b class="font_bold">Business Analytics</b> product for <b class="font_bold">Aspire Systems</b></li>
-                              <li ><a class="color_white" href="https://www.aspiresys.com/" target="_blank">Aspire Systems<i class="fas fa-globe"></i></a></li>
+    <div class="hero-section">
+        <h1>I am Sivaprakash Raman</h1>
+        <p>IT Professional with over 8+ years of experience in Full-Stack development, specializing in dynamic web projects and Cloud-based E-Commerce Point of Sale (POS) systems. Proficient in React, Angular, Node JS, and JavaScript , demonstrating strong technical skills across multiple programming languages. Proven track record in managing projects effectively while maintaining excellent customer relations. Expertise in all stages of the development cycle ensures timely and successful project delivery.</p>
 
-                              <li>During my time at <b class="font_bold">U.S.T</b>, I contributed to the <b class="font_bold">Periscope</b> product for <b class="font_bold">Applied materials</b></li>
-    
-                              <li ><a class="color_white" href="https://www.appliedmaterials.com/in/en.html" target="_blank">Applied Materials <i class="fas fa-globe"></i></a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+        <a href="./Sivaprakash_MERN_MEAN_8+Years_Experience.pdf" download>Download Resume</a>
+    </div>
+
+    <div class="packages-section" id="work">
+        <div class="section-header">
+            <h2>Worked Companies</h2>
+            <h2></h2>
+
+        </div>
+
+        <div class="packages-wrap">
+
+            <div class="pkg" data-category="web">
+                <!-- <div class="icon-box">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </div> -->
+                <h3>Great Innovus Solutions Inc</h3>
+                <!-- <div class="price" data-gbp="129">£129</div> -->
+                <ul class="feature-list">
+                    <li>Worked as a <b>Software Engineer</b></li>
+                    <li>worked duration: <b>September 2015 to February 2019</b></li>
+                    <li>Got <b>best employee award</b> in 2018</li>
+                    <li>Contributed to the <b>Inventory Management</b> product for <b>OVC</b></li>
+                    <!-- <li>Basic SEO</li>
+                    <li>2 week delivery</li> -->
+                </ul>
+                <button class="select-btn">Oneview Commerce</button>
+            </div>
+
+            <div class="pkg" data-category="web">
+                <!-- <div class="icon-box">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="2" y1="12" x2="22" y2="12" />
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                    </svg>
+                </div> -->
+                <h3>Sri Mookambika Infosolutions Private Limited</h3>
+                <!-- <div class="price" data-gbp="249">£249</div> -->
+                <ul class="feature-list">
+                    <li>Worked as a <b>Senior Software Engineer</b></li>
+                    <li>Worked duration: <b>March 2019 to March 2020</b></li>
+                    <li>Contributed to the <b>Health Care</b> product for <b>GHX</b></li>
+                </ul>
+                <button class="select-btn">GHX</button>
+            </div>
+
+            <div class="pkg" data-category="web">
+                <!-- <div class="icon-box">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1" />
+                        <circle cx="20" cy="21" r="1" />
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                    </svg>
+                </div> -->
+                <h3>Techmango Technology Services Private Limited</h3>
+                <!-- <div class="price" data-gbp="499">£499</div> -->
+                <ul class="feature-list">
+                    <li>Worked as a <b>Senior Software Engineer</b></li>
+                    <li>Worked duration: <b>April 2020 to July 2020</b></li>
+                </ul>
+                <button class="select-btn">Techmango</button>
+            </div>
+
+            <div class="pkg" data-category="bot">
+                <!-- <div class="icon-box">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <line x1="9" y1="9" x2="15" y2="15" />
+                        <line x1="15" y1="9" x2="9" y2="15" />
+                    </svg>
+                </div> -->
+                <h3>Photon Interactive Private Limited</h3>
+                <!-- <div class="price" data-gbp="39">£39</div> -->
+                <ul class="feature-list">
+                    <li>Worked as a <b>Senior Software Engineer II</b></li>
+                    <li>Work duration: <b>September 2020 to April 2023</b></li>
+                    <li>Got <b>60 % hike</b> while worked in Photon</li>
+                    <li>Worked in <b>Samsung</b> client place for <b>Samsung US Product</b></li>
+                </ul>
+                <button class="select-btn">Photon</button>
+            </div>
+
+            <div class="pkg" data-category="bot">
+                <!-- <div class="icon-box">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                        <line x1="12" y1="22.08" x2="12" y2="12" />
+                    </svg>
+                </div> -->
+                <h3>Aspire Systems</h3>
+                <!-- <div class="price" data-gbp="89">£89</div> -->
+                <ul class="feature-list">
+                    <li>Worked as a <b>Technical Leader</b></li>
+                    <li>Worked in <b>September 2023 to January 2024</b></li>
+                </ul>
+                <button class="select-btn">Aspire Systems</button>
+            </div>
+
+            <div class="pkg" data-category="bot">
+                <!-- <div class="icon-box">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6" />
+                        <polyline points="8 6 2 12 8 18" />
+                    </svg>
+                </div> -->
+                <h3>US Technology International Private Limited</h3>
+                <!-- <div class="price" data-gbp="179">£179</div> -->
+                <ul class="feature-list">
+                    <li>Worked as a <b>Technical Leader</b></li>
+                    <li>Worked in <b>July 2024 to May 2025</b></li>
+                    <li>Worked in <b>Applied Materials</b> client place for <b>Periscope Product</b></li>
+                </ul>
+                <button class="select-btn">UST Global</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="packages-section" id="demos">
+        <div class="section-header">
+            <h2>Demos</h2>
+        </div>
+        <h5 style="margin-bottom: 10px;">HTML / CSS / JAVASCRIPT</h5>
+        <div class="packages-wrap demo-pages-frame">
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>Sivaprakash Raman Detail Site</h3>
+                <button class="select-btn"><a href="https://sherksiva.github.io/" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
+
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>Wedding <br />Invitation</h3>
+                <button class="select-btn"><a href="https://sherksiva.github.io/sivaprakash_weds_amutha/" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
+
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>Weather Forcasting </h3>
+                <button class="select-btn"><a href="https://sherksiva.github.io/weather_forcasting/" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
+
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>Birthday <br /> Count </h3>
+                <button class="select-btn"><a href="https://sivaprakashbirthdaycountv1.vercel.app/" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
+
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>Profile <br /> Badge </h3>
+                <button class="select-btn"><a href="https://profilebadgev1.vercel.app/" target="_blank" rel="noopener noreferrer">Demo</a></button>
             </div>
         </div>
-        
-        <!--Waves Container-->
-        <div style="background: #395cb6;">
-            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                <defs>
-                    <path id="gentle-wave"
-                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                </defs>
-                <g class="parallax">
-                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-                </g>
-            </svg>
+
+        <h5 style="margin-bottom: 10px;margin-top: 10px;">REACT JS</h5>
+        <div class="packages-wrap demo-pages-frame">
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>Github Users Pagination</h3>
+                <button class="select-btn"><a href="https://reactpagination-alpha.vercel.app/" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
+
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>React CRUD</h3>
+                <button class="select-btn"><a href="https://curdreactcomponent.vercel.app/" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
+
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>Plant Store App</h3>
+                <button class="select-btn"><a href="https://plantstorereactappsampledeployment.vercel.app/" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
+
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>Cloud Experiences </h3>
+                <button class="select-btn"><a href="https://cloudexperiencesreact.vercel.app/" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
+
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>Notes App </h3>
+                <button class="select-btn"><a href="https://reacttsnotpadrspv01.vercel.app/" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
         </div>
-        <!--Waves end-->
+        <div class="packages-wrap demo-pages-frame" style="margin-top: 20px;">
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>Users List</h3>
+                <button class="select-btn"><a href="https://reactapicallsample.vercel.app/" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
 
-    </div>
-    <!--Header ends-->
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>React CRUD UI</h3>
+                <button class="select-btn"><a href="https://reactcrud-iota.vercel.app/" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
 
-    <!--Content starts-->
-    <div class="content">
-        <p>Sivaprakash Raman | 8.5 Years Experienced </p>
-        <p> Contact me via <a href="mailto:sivaprakash441@gmail.com">sivaprakash441@gmail.com</a> <span class="center_bar">| </span><a href="https://github.com/sherksiva" style="text-decoration: underline;"> Github</a> <span class="center_bar">| </span> <a href="https://codepen.io/sherksiva" style="text-decoration: underline;">CodePen</a><span class="center_bar">| </span> <a href="https://codesandbox.io/u/sivaprakash441" style="text-decoration: underline;">CodeSandBox</a></p>
-    </div>
-    <div class="content_file content flex">
-      <a href="./Sivaprakash_MERN_MEAN_8+Years_Experience.pdf" download>
-        Download Resume
-      </a>
-      <a style="text-decoration: underline;margin-left: 10px;color: -webkit-link;cursor: pointer;" class="toggle show_experiences" onclick="showExperiences()">Show Experiences</a>
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>CURD Hook</h3>
+                <button class="select-btn"><a href="https://crudoperationreacthooks.vercel.app/" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
 
-      <a style="text-decoration: underline;margin-left: 10px;color: -webkit-link;cursor: pointer;" class="toggle show_cards" style="display:none;" onclick="showCards()">Show Cards</a>
-      <a style="text-decoration: underline;margin-left: 10px;color: -webkit-link;cursor: pointer;" href="https://projects-demo-site.vercel.app/">Demo Projects</a>
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>To Do App</h3>
+                <button class="select-btn"><a href="https://react-to-do-list-add-delete-complet.vercel.app/" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
+
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>Dark Mode App</h3>
+                <button class="select-btn"><a href="https://reactcontextapidemov1.vercel.app/" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
+        </div>
+        <h5 style="margin-bottom: 10px;margin-top: 10px;">GITHUB REPOS</h5>
+        <div class="packages-wrap demo-pages-frame">
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>Node JS Swagger</h3>
+                <button class="select-btn"><a href="https://nodejsswaggerrsprepov02-86b218bnx-sherksivas-projects.vercel.app/" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
+
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>Node JS MYSQL</h3>
+                <button class="select-btn"><a href="https://github.com/sherksiva/nodejs_mysql_swagger_api" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
+
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>Node JS MongoDB</h3>
+                <button class="select-btn"><a href="https://github.com/sherksiva/nodejs-auto-swagger-with-CURD/" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
+
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>JWT AUTH Process </h3>
+                <button class="select-btn"><a href="https://github.com/sherksiva/reactjwtauthnode/" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
+
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>Express JS Setup</h3>
+                <button class="select-btn"><a href="https://github.com/sherksiva/jwt-auth-project" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
+        </div>
+        <h5 style="margin-bottom: 10px;margin-top: 10px;">GITHUB DB CONNECTIONS AND SETUP</h5>
+        <div class="packages-wrap demo-pages-frame" style="margin-top: 20px;">
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>Express JS Setup</h3>
+                <button class="select-btn"><a href="https://github.com/sherksiva/node-practice" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
+
+            <div class="pkg demo-pkg" data-category="web">
+                <h3>All DB Connection Code</h3>
+                <button class="select-btn"><a href="https://github.com/sherksiva/AllDBReadme" target="_blank" rel="noopener noreferrer">Demo</a></button>
+            </div>
+        </div>
+    </div>
+    <div class="packages-section" id="contact">
+        <div class="section-header">
+            <h2>Contact</h2>
+            <div class="packages-wrap">
+                <h3>sivaprakash441@gmail.com</h3>
+            </div>
+        </div>
     </div>
 
-    <div class="content_file content awards" style="font-size:15px;color: #ff0fa9;">
-      
-        <span>Got a best employee of the year award @ 2018 </span> <br />
-        <span>Got a 60% hike while work in Photon </span>
-      
-    </div>
-    <div style="text-align: center;">
-      <p class="moving_text" style="color:red">***For worked product/project details touch Each cards***</p>
-    </div>
-	
-    <div id="target">
-      <button class="toggle">close</button>
-    </div>
-    <!--Content ends-->
+    <script>
+        function filterItems(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            const packages = document.querySelectorAll('.pkg');
+            packages.forEach(pkg => {
+                const cats = pkg.getAttribute('data-category');
+                if (category === 'all' || cats.includes(category)) {
+                    pkg.classList.remove('hidden');
+                } else {
+                    pkg.classList.add('hidden');
+                }
+            });
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>
