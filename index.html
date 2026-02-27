@@ -11,6 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
         * {
             margin: 0;
@@ -23,6 +24,7 @@
             background: #0d0d0d;
             color: #e8e8e8;
             line-height: 1.5;
+            overflow-x: hidden;
         }
 
         .nav-bar {
@@ -303,7 +305,7 @@
 </head>
 
 <body>
-
+    <div class="sakura-falling"></div>
     <nav class="nav-bar" style="border-bottom: 1px solid #c7c0c0 !important;">
         <div class="brand">Sivaprakash Raman</div>
         <ul class="nav-menu">
@@ -543,7 +545,10 @@
             </div>
         </div>
     </div>
-
+    <!-- // leaf falling effect scripts -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/gh/timoschaefer/jQuery-Sakura/jquery-sakura.min.js'></script>
+    <script  src="script.js"></script>
 </body>
 
 </html>
